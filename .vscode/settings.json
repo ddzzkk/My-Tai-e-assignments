@@ -1,0 +1,5 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "gradle.nestedProjects": true,
+    "java.configuration.updateBuildConfiguration": "automatic"
+}
