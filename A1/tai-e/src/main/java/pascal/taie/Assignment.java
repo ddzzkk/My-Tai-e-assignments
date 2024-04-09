@@ -32,8 +32,13 @@ import java.util.List;
 public class Assignment {
 
     public static void main(String[] args) {
-        System.out.println("hello java_1");
+        System.out.println("hello java_3");
         if (args.length > 0) {
+            System.out.println("Args print start");
+            for (int i = 0; i < args.length; i++) {
+                System.out.println("args[" + i + "]: " + args[i]);
+            }
+            System.out.println("Args print done");
             List<String> argList = new ArrayList<>();
             Collections.addAll(argList, "-pp", "-p", "plan.yml");
             Collections.addAll(argList, args);

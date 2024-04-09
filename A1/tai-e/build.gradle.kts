@@ -1,3 +1,4 @@
+import org.gradle.api.tasks.JavaExec
 plugins {
     id("java")
     id("application")
@@ -16,7 +17,9 @@ dependencies {
 application {
     mainClass.set("pascal.taie.Assignment")
 }
-
+tasks.named<JavaExec>("run") {
+    args = listOf("-cp","src/test/resources/dataflow/livevar","-m","Assign") // 这里替换为你想传递的参数
+}
 tasks.compileJava { options.encoding = "UTF-8" }
 tasks.compileTestJava { options.encoding = "UTF-8" }
 

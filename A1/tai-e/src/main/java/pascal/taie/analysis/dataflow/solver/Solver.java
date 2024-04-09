@@ -22,8 +22,10 @@
 
 package pascal.taie.analysis.dataflow.solver;
 
+import fj.data.Set;
 import pascal.taie.analysis.dataflow.analysis.DataflowAnalysis;
 import pascal.taie.analysis.dataflow.fact.DataflowResult;
+import pascal.taie.analysis.dataflow.fact.SetFact;
 import pascal.taie.analysis.graph.cfg.CFG;
 
 /**
@@ -82,7 +84,17 @@ public abstract class Solver<Node, Fact> {
 
     protected void initializeBackward(CFG<Node> cfg, DataflowResult<Node, Fact> result) {
         // TODO - finish me
-        System.out.println("Initialize backward");
+        String cfg_str = cfg.toString();
+        String cfg_info = cfg_str.substring(cfg_str.length() - 15);
+        System.out.println("Initialize backward 1 " + cfg_info);
+        Node exit = cfg.getExit();
+        result.setInFact(exit, analysis.newBoundaryFact(cfg));
+
+        for (Node node : cfg) {
+            result.setInFact(node, null);
+            result.setOutFact(node, null);
+        }
+        System.out.println("Initialize backward 2" + cfg_info);
     }
 
     /**

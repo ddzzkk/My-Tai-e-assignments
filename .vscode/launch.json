@@ -1,0 +1,234 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Assignment",
+            "request": "launch",
+            "mainClass": "pascal.taie.Assignment",
+            "projectName": "tai-e-A1",
+            // "preLaunchTask": "buildWithoutTests",
+            "args": "-cp src/test/resources/dataflow/livevar -m Assign"
+        },
+        {
+            "type": "java",
+            "name": "Assignment(1)",
+            "request": "launch",
+            "mainClass": "pascal.taie.Assignment",
+            "projectName": "my-project-name-1"
+        },
+        {
+            "type": "java",
+            "name": "Assignment(2)",
+            "request": "launch",
+            "mainClass": "pascal.taie.Assignment",
+            "projectName": "tai-e-A3"
+        },
+        {
+            "type": "java",
+            "name": "Assignment(3)",
+            "request": "launch",
+            "mainClass": "pascal.taie.Assignment",
+            "projectName": "tai-e-A5"
+        },
+        {
+            "type": "java",
+            "name": "Array",
+            "request": "launch",
+            "mainClass": "pta.cipta.Array",
+            "projectName": "tai-e-A5"
+        },
+        {
+            "type": "java",
+            "name": "StaticCall",
+            "request": "launch",
+            "mainClass": "pta.cipta.StaticCall",
+            "projectName": "tai-e-A5"
+        },
+        {
+            "type": "java",
+            "name": "Assignment(4)",
+            "request": "launch",
+            "mainClass": "pascal.taie.Assignment",
+            "projectName": "tai-e-A6"
+        },
+        {
+            "type": "java",
+            "name": "Array(1)",
+            "request": "launch",
+            "mainClass": "pta.cspta.Array",
+            "projectName": "tai-e-A6"
+        },
+        {
+            "type": "java",
+            "name": "TwoObject",
+            "request": "launch",
+            "mainClass": "pta.cspta.TwoObject",
+            "projectName": "tai-e-A6"
+        },
+        {
+            "type": "java",
+            "name": "Array(2)",
+            "request": "launch",
+            "mainClass": "dataflow.constprop.alias.Array",
+            "projectName": "tai-e-A7"
+        },
+        {
+            "type": "java",
+            "name": "ArrayInter2",
+            "request": "launch",
+            "mainClass": "dataflow.constprop.alias.ArrayInter2",
+            "projectName": "tai-e-A7"
+        },
+        {
+            "type": "java",
+            "name": "ArrayLoops",
+            "request": "launch",
+            "mainClass": "dataflow.constprop.alias.ArrayLoops",
+            "projectName": "tai-e-A7"
+        },
+        {
+            "type": "java",
+            "name": "InstanceField",
+            "request": "launch",
+            "mainClass": "dataflow.constprop.alias.InstanceField",
+            "projectName": "tai-e-A7"
+        },
+        {
+            "type": "java",
+            "name": "Interprocedural2",
+            "request": "launch",
+            "mainClass": "dataflow.constprop.alias.Interprocedural2",
+            "projectName": "tai-e-A7"
+        },
+        {
+            "type": "java",
+            "name": "ObjSens",
+            "request": "launch",
+            "mainClass": "dataflow.constprop.alias.ObjSens",
+            "projectName": "tai-e-A7"
+        },
+        {
+            "type": "java",
+            "name": "StaticField",
+            "request": "launch",
+            "mainClass": "dataflow.constprop.alias.StaticField",
+            "projectName": "tai-e-A7"
+        },
+        {
+            "type": "java",
+            "name": "StaticFieldMultiStores",
+            "request": "launch",
+            "mainClass": "dataflow.constprop.alias.StaticFieldMultiStores",
+            "projectName": "tai-e-A7"
+        },
+        {
+            "type": "java",
+            "name": "Assignment(5)",
+            "request": "launch",
+            "mainClass": "pascal.taie.Assignment",
+            "projectName": "tai-e-A7"
+        },
+        {
+            "type": "java",
+            "name": "Assignment(6)",
+            "request": "launch",
+            "mainClass": "pascal.taie.Assignment",
+            "projectName": "tai-e-A8"
+        },
+        {
+            "type": "java",
+            "name": "ArgToResult",
+            "request": "launch",
+            "mainClass": "pta.taint.ArgToResult",
+            "projectName": "tai-e-A8"
+        },
+        {
+            "type": "java",
+            "name": "BaseToResult",
+            "request": "launch",
+            "mainClass": "pta.taint.BaseToResult",
+            "projectName": "tai-e-A8"
+        },
+        {
+            "type": "java",
+            "name": "InterTaintTransfer",
+            "request": "launch",
+            "mainClass": "pta.taint.InterTaintTransfer",
+            "projectName": "tai-e-A8"
+        },
+        {
+            "type": "java",
+            "name": "OneCallTaint",
+            "request": "launch",
+            "mainClass": "pta.taint.OneCallTaint",
+            "projectName": "tai-e-A8"
+        },
+        {
+            "type": "java",
+            "name": "SimpleTaint",
+            "request": "launch",
+            "mainClass": "pta.taint.SimpleTaint",
+            "projectName": "tai-e-A8"
+        },
+        {
+            "type": "java",
+            "name": "StringAppend",
+            "request": "launch",
+            "mainClass": "pta.taint.StringAppend",
+            "projectName": "tai-e-A8"
+        },
+        {
+            "type": "java",
+            "name": "TaintInList",
+            "request": "launch",
+            "mainClass": "pta.taint.TaintInList",
+            "projectName": "tai-e-A8"
+        },
+        {
+            "type": "java",
+            "name": "AbstractMethod",
+            "request": "launch",
+            "mainClass": "cha.AbstractMethod",
+            "projectName": "tai-e"
+        },
+        {
+            "type": "java",
+            "name": "Interface",
+            "request": "launch",
+            "mainClass": "cha.Interface",
+            "projectName": "tai-e"
+        },
+        {
+            "type": "java",
+            "name": "Fibonacci",
+            "request": "launch",
+            "mainClass": "dataflow.constprop.inter.Fibonacci",
+            "projectName": "tai-e"
+        },
+        {
+            "type": "java",
+            "name": "MultiIntArgs",
+            "request": "launch",
+            "mainClass": "dataflow.constprop.inter.MultiIntArgs",
+            "projectName": "tai-e"
+        },
+        {
+            "type": "java",
+            "name": "Reference",
+            "request": "launch",
+            "mainClass": "dataflow.constprop.inter.Reference",
+            "projectName": "tai-e"
+        },
+        {
+            "type": "java",
+            "name": "Assignment(7)",
+            "request": "launch",
+            "mainClass": "pascal.taie.Assignment",
+            "projectName": "tai-e"
+        }
+    ]
+}
