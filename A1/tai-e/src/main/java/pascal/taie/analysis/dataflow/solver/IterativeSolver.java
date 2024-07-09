@@ -43,6 +43,26 @@ class IterativeSolver<Node, Fact> extends Solver<Node, Fact> {
         System.out.println("Do solve backward_1");
         // Fact boundaryFact = analysis.newBoundaryFact(cfg);
         // analysis.newInitialFact();
-
+        Node exit = cfg.getExit();
+        boolean change = true;
+        do {
+            change = false;
+            for (Node node : cfg) {
+                // for all node except exit
+                if (node.equals(exit))
+                    continue;
+                // for all succ of node
+                for (Node succ : cfg.getSuccsOf(node)) {
+                    Fact succ_inFact = result.getInFact(succ);
+                    Fact node_outfact = result.getOutFact(node);
+                    analysis.meetInto(succ_inFact, node_outfact);
+                }
+                // transfer node
+                Fact node_infact = result.getInFact(node);
+                Fact node_outfact = result.getOutFact(node);
+                if (analysis.transferNode(node, node_infact, node_outfact))
+                    change = true;
+            }
+        } while (change);
     }
 }

@@ -25,6 +25,7 @@ package pascal.taie.analysis.dataflow.analysis;
 import pascal.taie.analysis.dataflow.fact.SetFact;
 import pascal.taie.analysis.graph.cfg.CFG;
 import pascal.taie.config.AnalysisConfig;
+import pascal.taie.ir.exp.LValue;
 import pascal.taie.ir.exp.RValue;
 import pascal.taie.ir.exp.Var;
 import pascal.taie.ir.stmt.Stmt;
@@ -49,17 +50,12 @@ public class LiveVariableAnalysis extends
     @Override
     public SetFact<Var> newBoundaryFact(CFG<Stmt> cfg) {
         // TODO - finish me
-        System.out.println("New boundary fact");
-        Stmt exit = cfg.getExit();
-        
         SetFact<Var> setFact = new SetFact<>();
-        System.out.println("gonna return setFact");
         return setFact;
     }
 
     @Override
     public SetFact<Var> newInitialFact() {
-        System.out.println("New initial fact");
         SetFact<Var> setFact = new SetFact<>();
         return setFact;
     }
@@ -75,21 +71,22 @@ public class LiveVariableAnalysis extends
     public boolean transferNode(Stmt stmt, SetFact<Var> in, SetFact<Var> out) {
         // TODO - finish me
         System.out.println("Transfer CCCCCCCCCCCnode");
+        SetFact<Var> temp_out = out.copy();
         boolean res = false;
-        for (RValue rvalue : stmt.getUses()) {
-            if (rvalue instanceof Var) {
-                if (out.contains((Var) rvalue)) {
-                    out.remove((Var) rvalue);
-                    res = true;
-                }
+        if (stmt.getDef().isPresent()) {
+            LValue def = stmt.getDef().get();
+            if (def instanceof Var) {
+                temp_out.remove((Var) def);
             }
         }
-        if (stmt.getDef().isPresent()) {
-            Var def = (Var) stmt.getDef().get();
-            if (!out.contains(def)) {
-                out.add(def);
-                res = true;
+        for (RValue rvalue : stmt.getUses()) {
+            if (rvalue instanceof Var) {
+                temp_out.add((Var) rvalue);
             }
+        }
+        if (!in.equals(temp_out)) {
+            in.set(temp_out);
+            res = true;
         }
         return res;
 

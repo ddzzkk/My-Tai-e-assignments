@@ -89,10 +89,11 @@ public abstract class Solver<Node, Fact> {
         System.out.println("Initialize backward 1 " + cfg_info);
         Node exit = cfg.getExit();
         result.setInFact(exit, analysis.newBoundaryFact(cfg));
-
         for (Node node : cfg) {
-            result.setInFact(node, null);
-            result.setOutFact(node, null);
+            if (node != exit) {
+                result.setInFact(node, analysis.newInitialFact());
+                result.setOutFact(node, analysis.newInitialFact());
+            }
         }
         System.out.println("Initialize backward 2" + cfg_info);
     }
